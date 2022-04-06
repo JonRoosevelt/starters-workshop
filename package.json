@@ -61,6 +61,7 @@
     }
   },
   "devDependencies": {
-    "@babel/preset-typescript": "^7.16.7"
+    "@babel/preset-typescript": "^7.16.7",
+    "prettier": "2.6.2"
   }
 }
