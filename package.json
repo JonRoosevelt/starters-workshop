@@ -6,7 +6,7 @@
     "@emotion/react": "^11.8.2",
     "@mdx-js/react": "^2.1.1",
     "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
+    "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.4.1",
     "@types/node": "^16.11.26",
@@ -26,10 +26,15 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "rules": {
+      "quotes": [
+        2,
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -52,8 +57,7 @@
       "/node_modules/(@emotion|@theme-ui)"
     ],
     "transform": {
-      ".(js|jsx)": "babel-jest",
-      ".(ts|tsx)": "ts-jest"
+      ".(js|jsx)": "babel-jest"
     }
   },
   "devDependencies": {
