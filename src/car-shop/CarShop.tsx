@@ -21,11 +21,9 @@ function CarShop() {
       className="CarShopPage"
     >
       {boughtCar ? (
-        <Card
-          sx={{ position: 'absolute', margin: 'auto', left: '30%', top: '50%' }}
-        >
+        <Box p={3} sx={{ textAlign: 'center', mt: '20vw' }}>
           <Heading>You've bought a car. Congratulations Stevie Wonder</Heading>
-        </Card>
+        </Box>
       ) : (
         <Box p={3} sx={{ border: '1px solid lightgray', mt: '2vh' }}>
           <Heading>BMW X1</Heading>
