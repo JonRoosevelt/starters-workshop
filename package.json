@@ -42,5 +42,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "coverageReporters": [
+      "text",
+      "lcov"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(@emotion|@theme-ui)"
+    ],
+    "transform": {
+      ".(js|jsx)": "babel-jest",
+      ".(ts|tsx)": "ts-jest"
+    }
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.16.7"
   }
 }
