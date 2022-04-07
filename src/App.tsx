@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Theme, ThemeProvider } from 'theme-ui'
-import CarShop from './car-shop/CarShop'
+import CarShop from './CarShop'
 import { theme } from './theme/theme'
 
 function App() {

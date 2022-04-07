@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import CarShop from './CarShop'
+import CarShop from '.'
 
 describe('Buy car', () => {
   test('should render a car name', () => {
