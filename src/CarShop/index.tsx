@@ -53,7 +53,8 @@ function CarShop() {
     setBoughtCar(true)
   }
 
-  const handleColorMode = (event: React.MouseEvent<HTMLElement>) => {
+  const handleColorMode = () => {
+    console.log(colorMode)
     setColorMode(colorMode === 'default' ? 'dark' : 'default')
   }
 
