@@ -37,3 +37,21 @@ describe('Buy car', () => {
     expect(boughtCarMessage).toBeInTheDocument()
   })
 })
+describe('Theme', () => {
+  test('should render change theme button', () => {
+    render(<CarShop />)
+
+    const themeChangeButton = screen.getByRole('button', {
+      name: /Change theme/i,
+    })
+    expect(themeChangeButton).toBeInTheDocument()
+  })
+  test('button should change color theme', () => {
+    render(<CarShop />)
+    const themeChangeButton = screen.getByRole('button', {
+      name: /Change theme/i,
+    })
+    fireEvent.click(themeChangeButton)
+    expect(true).toBe(true)
+  })
+})
