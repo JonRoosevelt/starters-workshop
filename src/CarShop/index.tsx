@@ -1,15 +1,17 @@
+import { useTheme } from '@emotion/react'
 import styled from '@emotion/styled'
 import React, { useState } from 'react'
-import { Image, Button, Theme, Container, useColorMode } from 'theme-ui'
+import { Image, Button, Container, useColorMode } from 'theme-ui'
+import { BMWUITheme } from '../theme/theme'
 
-const CustomContainer = styled.div<{ theme: Theme }>`
+const CustomContainer = styled.div<{ theme: BMWUITheme }>`
   max-width: 768px;
   color: ${(props) => props.theme?.colors?.primary};
-  font-family: ${(props) => props.theme?.fonts?.[1]};
+  font-family: ${(props) => props.theme?.fonts?.heading};
   margin-top: 5vh;
 `
 
-const Card = styled.div<{ theme: Theme }>`
+const Card = styled.div<{ theme: BMWUITheme }>`
     box-sizing: border-box;
     margin: 0;
     min-width: 0;
@@ -19,7 +21,7 @@ const Card = styled.div<{ theme: Theme }>`
     margin-right: auto;
     max-width: 768px;
     color: ${(props) => props.theme?.colors?.primary};
-    font-family: ${(props) => props.theme?.fonts?.[1]};
+    font-family: ${(props) => props.theme?.fonts?.heading};
 
     h1 {
       text-align: center
@@ -31,7 +33,7 @@ const CustomCard = styled(Card)`
     margin-top: 20vh;
   }
 `
-const CarBox = styled.div<{ theme: Theme }>`
+const CarBox = styled.div<{ theme: BMWUITheme }>`
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -40,13 +42,14 @@ const CarBox = styled.div<{ theme: Theme }>`
   margin-top: 2vh;
 
   h1 {
-    font-family: ${(props) => props.theme?.fonts?.[1]};
+    font-family: ${(props) => props.theme?.fonts?.heading};
   }
 `
 
 function CarShop() {
   const [boughtCar, setBoughtCar] = useState(false)
   const [colorMode, setColorMode] = useColorMode()
+  const theme = useTheme()
 
   const handleBuyCar = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault()
@@ -54,20 +57,19 @@ function CarShop() {
   }
 
   const handleColorMode = () => {
-    console.log(colorMode)
     setColorMode(colorMode === 'default' ? 'dark' : 'default')
   }
 
   return (
     <>
-      <CustomContainer theme={colorMode} as={Container}>
+      <CustomContainer theme={theme} as={Container}>
         <Button onClick={handleColorMode}>Change theme</Button>
         {boughtCar ? (
-          <CustomCard theme={colorMode}>
+          <CustomCard theme={theme}>
             <h1>You've bought a car. Congratulations Stevie Wonder</h1>
           </CustomCard>
         ) : (
-          <CarBox theme={colorMode}>
+          <CarBox theme={theme}>
             <h1>BMW X1</h1>
             <Image src="/bmw-x1.jpeg" alt="BMW X1" />
             <div>
